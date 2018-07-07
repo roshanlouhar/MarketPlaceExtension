@@ -1,0 +1,72 @@
+{
+    "id": "4adb6821-c6b8-425e-a7da-46e607cdbc8d",
+    "name": "FTPAzureUpload",
+    "friendlyName": "FTP to Azure Upload",
+    "description": "A VSTS Build Task that upload files from FTP to azure app service",
+    "helpMarkDown": "A VSTS Build Task that upload files from FTP to azure app service",
+    "category": "Build",
+    "visibility": [
+        "Build"
+    ],
+    "runsOn": [
+        "Agent",
+        "DeploymentGroup"
+    ],
+    "author": "Roshan Louhar",
+    "version": {
+        "Major": 1,
+        "Minor": 1,
+        "Patch": 0
+    },
+    "instanceNameFormat": "upload files from FTP to azure app service",
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [        
+		{
+            "name": "SourcePath",
+            "type": "string",
+            "label": "SourcePath",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Source Path"			
+        },
+		{
+            "name": "FTPHost",
+            "type": "string",
+            "label": "FTPHost",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "FTP Host"			
+        },
+		{
+            "name": "FTPUserName",
+            "type": "string",
+            "label": "FTP UserName",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "FTP Username"			
+        },
+		{
+            "name": "FTPPassword",
+            "type": "string",
+            "label": "FTP Password",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "FTP Password"			
+        }
+    ],
+    "execution": {
+        "PowerShell3": {
+            "target": "powershell.ps1",
+            "platforms": [
+                "windows"
+            ],
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

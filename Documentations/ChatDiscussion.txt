@@ -1,0 +1,132 @@
+hi
+HI
+I'm starting 
+how I created a custom build template.
+
+
+u there??
+Yesf
+
+this is my custom template 
+this is important file first which is used to create 
+template.
+
+
+GO o
+
+in buildtask this two file is again should be there 
+
+
+then there is some custom script to cretate template.vsix files
+in root
+4adb6821-c6b8-425e-a7da-46e607cdbc8d.HelloBuildTask-1.0.0
+
+this is files we need to create first
+\then it will be published to marketpalce
+
+??
+Please show e how it is worngnow.
+yes
+
+need to publish first I have published already
+see 
+
+
+then it need to be downloadded by vsts account
+once you publish from there 
+it will be downlaod in to vsts account 
+
+
+??
+
+ Does it grab the published profile username, password and url from XML  and will then FTP a source file or directory to a destination?
+
+no this only way to create extension 
+I Hvae written only simple ps script
+you need to push your script here before we create this
+
+??
+Did you run .ps file which I sent you before.
+No I have not But I checked it 
+I know very few powershell
+
+
+if you think this is coorect ps script and it will work then I can only test
+because I have no idea about it 
+
+
+how to test thsi 
+??
+once you will complete this you can this extension in vsts
+see
+
+
+now your ps script will do whateever you want to do ??
+this sis only process 
+neeed to look if this ps script locally whether it works or not 
+???
+there 
+yes
+
+OK. I will check. Please upload on FL what you have done so far.
+FL??
+freelancer.
+sure will do that 
+what is your time now there ??
+7.14 AM
+becuase it 4 o clock her e
+pm
+
+I don't have ftp to test 
+run this ps script on powrshell and check it works fine or not??
+then we can proceed
+OK
+will connect later once youconfirm it
+OK. but uload it on FL\
+
+yes post confirmation you I will do this chat
+ther e
+
+
+will connect after 5 mine time and 9 your time
+
+do you gmail hangout
+we can coonect on video or audio..
+
+
+u there ??
+YEs
+thats it from my side ..
+u have anything we can discuus
+in which technology your project??
+
+
+YOu want get mor jobs from me now?
+
+you are also developer ??
+which technology ?
+
+Web
+I'm microsoft technolgy 
+
+core technolgy of your ??
+jsut curous ??
+Nothing special.
+u use open source like saying earlier ionic or reactjs
+
+YEs
+or backend ??
+Front end and backend both
+ok..
+then test your shell script and let me know 
+
+
+OK
+disconnecting now..
+
+
+
+
+
+
+

@@ -9,7 +9,6 @@
             <GroupBy>
                 <PropertyName>Parent</PropertyName> 
             </GroupBy>			
-			
 			<TableControl>
 				<TableHeaders>
 					<TableColumnHeader>

@@ -7,21 +7,23 @@ $FTPUser = Get-VstsInput -Name FTPUserName -Require
 $FTPPass = Get-VstsInput -Name FTPPassword -Require
 $FTPHost = Get-VstsInput -Name FTPHost -Require
 
+[CmdletBinding()]
+param()
+
+# Get inputs for the task
+#$appdirectory = 'D:\free'
+#$FTPUser = 'CustomTaskTest\$CustomTaskTest'
+#$FTPPass = 'mHfqKLTBDspYWMcg9N6gmp5kr0K53BtJMZ0xajD5vdGrWalY3ogoHzYhveRp'
+#$FTPHost = 'ftp://waws-prod-dm1-043.ftp.azurewebsites.windows.net/site/wwwroot'
+
 #printing variable here to check values
 Write-output "$PlainUsername"
 Write-output "$TenentId"
 Write-output "$SubscriptionId"
 Write-output "$Environment"
 
-try {
-	# check username and password is retrieved here or not from publish profiles.
-    Write-Output $FTPUser
-    Write-Output $FTPPass
-    Write-Output $FTPHost
-	
-	$webclient = New-Object System.Net.WebClient 
-	$webclient.Credentials = New-Object System.Net.NetworkCredential($FTPUser,$FTPPass)  
-	 
+try {	
+		 
 	$SrcEntries = Get-ChildItem $appdirectory -Recurse
 	$Srcfolders = $SrcEntries | Where-Object{$_.PSIsContainer}
 	$SrcFiles = $SrcEntries | Where-Object{!$_.PSIsContainer}
@@ -60,18 +62,29 @@ try {
 	}
 	Write-Output "Create FTP Directory/SubDirectory If Needed - Stop"
 
+    
 	Write-Output "Upload Files - Start"
 	foreach($entry in $SrcFiles)
 	{
-		$SrcFullname = $entry.fullname
-		$SrcName = $entry.Name
-		$SrcFilePath = $appdirectory -replace "\\","\\" -replace "\:","\:"
-		$DesFile = $SrcFullname -replace $SrcFilePath,$FTPHost
-		$DesFile = $DesFile -replace "\\", "/"
-		# Write-Output $DesFile
+		try{
+			$webclient = New-Object System.Net.WebClient 
+			$webclient.Credentials = New-Object System.Net.NetworkCredential($FTPUser,$FTPPass)
+
+		
+            $SrcFullname = $entry.fullname
+		    $SrcName = $entry.Name
+		    $SrcFilePath = $appdirectory -replace "\\","\\" -replace "\:","\:"
+		    $DesFile = $SrcFullname -replace $SrcFilePath,$FTPHost
+		    $DesFile = $DesFile -replace "\\", "/"
+		   
+            Write-Output $DesFile
 	 
-		$uri = New-Object System.Uri($DesFile) 
-		$webclient.UploadFile($uri, $SrcFullname)
+		    $uri = New-Object System.Uri($DesFile) 
+		    $webclient.UploadFile($uri, $SrcFullname)
+        }
+        catch{
+	        $err = Write-Host $Error.exception.message continue  
+        }		
 	}
 	Write-Output "All files uploaded successfully"	
     $webclient.Dispose()	
